@@ -1,0 +1,7 @@
+#Docker file for creating an image
+
+FROM ubuntu:16.04
+MAINTAINE Bala krishnan
+RUN sudo apt-get install libboost-all-dev
+ADD $(Build.ArtifactStagingDirectory)/${r}.${b}.${c}.sh /scripts/BinaryOut.sh
+CMD [./BinaryOut.sh]
